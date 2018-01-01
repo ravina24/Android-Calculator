@@ -65,7 +65,17 @@ public class CalculatorActivity extends AppCompatActivity implements View.OnClic
                     goToAnswerActivity(answer);
                     break;
                 }
-                //TODO any extra implmentations (optional)
+                case R.id.power: // first input to the power of the second input
+                {
+                    double answer = Math.pow(firstInput, secondInput);
+                    goToAnswerActivity(answer);
+                }
+                case R.id.root: // calculate the second input'th root of the first input
+                {
+                    double power = 1/secondInput;
+                    double answer = Math.pow(firstInput, power);
+                    goToAnswerActivity(answer);
+                }
                 default:
                 {
                     Toast.makeText(this, "Click not implmented yet", Toast.LENGTH_LONG).show();

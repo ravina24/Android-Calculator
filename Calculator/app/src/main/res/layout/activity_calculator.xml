@@ -71,15 +71,16 @@
             android:layout_height="wrap_content"
             android:text="Extra functions:"/>
         <Button
-            android:id="@+id/operation_extra1"
+            android:id="@+id/power"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="func1"/>
+            android:text="Power"
+            android:onClick="onClick"/>
         <Button
-            android:id="@+id/operation_extra2"
+            android:id="@+id/root"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="func2"/>
+            android:text="Root"/>
         <Button
             android:id="@+id/operation_extra3"
             android:layout_width="wrap_content"
