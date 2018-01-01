@@ -37,17 +37,20 @@
                 android:id="@+id/operation_sub"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="-"/>
+                android:text="-"
+                android:onClick="onClick"/>
             <Button
                 android:id="@+id/operation_multi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="x"/>
+                android:text="x"
+                android:onClick="onClick"/>
             <Button
                 android:id="@+id/operation_div"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="/"/>
+                android:text="/"
+                android:onClick="onClick"/>
         </LinearLayout>
         <EditText
             android:id="@+id/secondInput"

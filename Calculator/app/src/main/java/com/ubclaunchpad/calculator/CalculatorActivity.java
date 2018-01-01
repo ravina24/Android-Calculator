@@ -44,24 +44,25 @@ public class CalculatorActivity extends AppCompatActivity implements View.OnClic
                 case R.id.operation_add:
                 {
                     double answer = firstInput + secondInput;
-                    Intent intent = new Intent(this, AnswerActivity.class);
-                    intent.putExtra("answer", answer);
-                    startActivity(intent);
+                    goToAnswerActivity(answer);
                     break;
                 }
                 case R.id.operation_sub:
                 {
-                    //TODO subtract function
+                    double answer = firstInput - secondInput;
+                    goToAnswerActivity(answer);
                     break;
                 }
                 case R.id.operation_multi:
                 {
-                    //TODO multiply function
+                    double answer = firstInput * secondInput;
+                    goToAnswerActivity(answer);
                     break;
                 }
                 case R.id.operation_div:
                 {
-                    //TODO divide function
+                    double answer = firstInput / secondInput;
+                    goToAnswerActivity(answer);
                     break;
                 }
                 //TODO any extra implmentations (optional)
@@ -81,6 +82,12 @@ public class CalculatorActivity extends AppCompatActivity implements View.OnClic
         }
 
 
+    }
+
+    private void goToAnswerActivity(double answer) {
+        Intent intent = new Intent(this, AnswerActivity.class);
+        intent.putExtra("answer", answer);
+        startActivity(intent);
     }
 
     private Boolean isValidFirstInput(View v) {
