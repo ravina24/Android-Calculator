@@ -69,16 +69,27 @@ public class CalculatorActivity extends AppCompatActivity implements View.OnClic
                 {
                     double answer = Math.pow(firstInput, secondInput);
                     goToAnswerActivity(answer);
+                    break;
                 }
                 case R.id.root: // calculate the second input'th root of the first input
                 {
                     double power = 1/secondInput;
                     double answer = Math.pow(firstInput, power);
                     goToAnswerActivity(answer);
+                    break;
+                }
+                case R.id.percentage: // first divided by second, multiplied by 100 (percentage of first in second)
+                {
+                    double answer = (firstInput / secondInput) * 100;
+                    String answerString = "" + answer + "%";
+                    Intent intent = new Intent(this, AnswerActivity.class);
+                    intent.putExtra("percent", answerString);
+                    startActivity(intent);
+                    break;
                 }
                 default:
                 {
-                    Toast.makeText(this, "Click not implmented yet", Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, "Click not implemented yet", Toast.LENGTH_LONG).show();
                     Log.e(TAG, "View id: " + v.getId() + " click not implemented yet");
                     break;
                 }

@@ -19,10 +19,17 @@ public class AnswerActivity extends AppCompatActivity {
         answerText = (TextView) findViewById(R.id.answer);
         goBackButton = (Button) findViewById(R.id.goBack);
 
-        // set answer
-        double answer = getIntent().getDoubleExtra("answer", 0);
-        String answerString = "" + answer;
-        answerText.setText(answerString);
+        if(getIntent().hasExtra("answer")) {
+            // set answer for most buttons
+            double answer = getIntent().getDoubleExtra("answer", 0);
+            String answerString = "" + answer;
+            answerText.setText(answerString);
+        } else {
+            String answer = getIntent().getStringExtra("percent");
+            String answerString = "" + answer;
+            answerText.setText(answerString);
+        }
+
     }
 
     public void goBackToCalculator(View view) {
